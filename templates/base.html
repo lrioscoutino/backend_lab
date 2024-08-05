@@ -9,5 +9,18 @@
 {% for item in number_list %}
     <h1>{{item}} Bienvenido desded django con RENDER. {{name}} {{age}}</h1>
 {% endfor %}
+
+<table>
+<tr>
+    <td>Id</td>
+    <td>Nombre</td>
+    <td>Descripcion</td>
+</tr>
+    {% for subject in subjects %}
+    <tr>
+        <td>{{subject.id}}</td>
+    </tr>
+{% endfor %}
+    </table>
 </body>
 </html>
