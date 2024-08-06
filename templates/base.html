@@ -6,10 +6,7 @@
 
 </head>
 <body>
-{% for item in number_list %}
-    <h1>{{item}} Bienvenido desded django con RENDER. {{name}} {{age}}</h1>
-{% endfor %}
-
+<a href="{% url 'add-subjects-view' %}">Agregar Materia</a>
 <table>
 <tr>
     <td>Id</td>
@@ -18,7 +15,10 @@
 </tr>
     {% for subject in subjects %}
     <tr>
-        <td>{{subject.id}}</td>
+        <td><a href="{% url 'update-subjects-view' subject_id=subject.id %}" >{{subject.id}}</a> </td>
+        <td>{{subject.name}}</td>
+        <td>{{subject.description}}</td>
+        <td>{{subject.is_active}}</td>
     </tr>
 {% endfor %}
     </table>
