@@ -12,6 +12,10 @@ def first_view(request):
     return HttpResponse(cadena)
 
 
+def initial_view(request):
+    return render(request, "base.html")
+
+
 def second_view(request):
     subjects = Subject.objects.filter(is_active=True)
     number_list = [2, 4, 5, 6, 8, 34]
@@ -29,7 +33,7 @@ def subjects_view(request):
     context = {
         "subjects": subjects
     }
-    return render(request, "base.html", context=context)
+    return render(request, "subjects.html", context=context)
 
 
 def add_subjects_view(request):

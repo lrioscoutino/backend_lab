@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Formulario de materias</title>
-</head>
-<body>
-<form action="." method="post">
+{% extends "base.html" %}
+{% block content %}
+<form action="." method="post" class="form-control">
     {% csrf_token %}
     <label>Nombre materia</label><input
         type="text"
@@ -20,5 +15,4 @@
     <input type="submit" value="Guardar">
     <input type="submit" value="Eliminar">
 </form>
-</body>
-</html>
+{%endblock%}
