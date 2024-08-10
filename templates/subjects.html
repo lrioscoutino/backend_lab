@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<a href="{% url 'add-subjects-view' %}">Agregar Materia</a>
+<table class="table">
+<tr>
+    <td>Id</td>
+    <td>Nombre</td>
+    <td>Descripcion</td>
+</tr>
+    {% for subject in subjects %}
+    <tr>
+        <td><a href="{% url 'update-subjects-view' subject_id=subject.id %}" >{{subject.id}}</a> </td>
+        <td>{{subject.name}}</td>
+        <td>{{subject.description}}</td>
+        <td>{{subject.is_active}}</td>
+    </tr>
+{% endfor %}
+    </table>
+{% endblock %}
